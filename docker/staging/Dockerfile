@@ -13,6 +13,6 @@ FROM alpine:3.14.2
 
 WORKDIR /app
 
-COPY --from=builder /app/bin/ /app/bin/
+COPY --from=builder /app /app
 
-CMD ["/app"]
+CMD ["./app"]
