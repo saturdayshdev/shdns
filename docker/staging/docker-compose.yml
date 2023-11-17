@@ -6,6 +6,7 @@ services:
     container_name: staging-shdns-app
     image: ghcr.io/saturdayshdev/shdns:staging
     environment:
+      - DOCKER_API_VERSION=1.42
       - CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY}
       - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
     volumes:
