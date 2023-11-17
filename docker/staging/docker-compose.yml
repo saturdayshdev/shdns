@@ -1,13 +1,12 @@
 version: "3.9"
+name: "staging-shdns"
 
 services:
   app:
-    container_name: shdns-app
+    container_name: staging-shdns-app
     image: ghcr.io/saturdayshdev/shdns:staging
     environment:
       - CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY}
       - CLOUDFLARE_API_EMAIL=${CLOUDFLARE_API_EMAIL}
     volumes:
-      - ../../:/app
       - /var/run/docker.sock:/var/run/docker.sock:ro
-    command: go run cmd/main.go
