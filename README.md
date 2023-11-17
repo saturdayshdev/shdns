@@ -1,10 +1,18 @@
-# shDNS
+## shDNS
 
 Service for automatic creation of Cloudflare DNS records.
 
-## Tech Stack
+### Usage
 
-- [Go](https://go.dev)
+shDNS works based on Docker labels of containers and the container start event.
+
+```yaml
+labels:
+  - shdns.type=A
+  - shdns.name=test.domain.com
+  - shdns.value=127.0.0.1
+  - shdns.proxied=false
+```
 
 ## Prerequisites
 
@@ -12,16 +20,16 @@ Service for automatic creation of Cloudflare DNS records.
 2. Consume the available aliases by running `source dev.sh`.
 3. Run the app using the `start` alias.
 
-## Environment
+### Environment
 
 You can see a list of all environment variables below.
 
-| Variable           | Description                   |
-| ------------------ | ----------------------------- |
-| CLOUDFLARE_API_KEY | Global API key for Cloudlfare |
-| CLOUDFLARE_EMAIL   | Cloudflare email.             |
+| Variable           | Description                    |
+| ------------------ | ------------------------------ |
+| CLOUDFLARE_API_KEY | Global API key for Cloudlfare. |
+| CLOUDFLARE_EMAIL   | Email for Cloudflare.          |
 
-## Commits
+### Commits
 
 All commits MUST contain the suitable prefix. Acceptable prefixes:
 
@@ -35,6 +43,6 @@ All commits MUST contain the suitable prefix. Acceptable prefixes:
 - `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 - `test`: Adding missing tests or correcting existing tests
 
-## Team
+### Team
 
 - Oskar Wójcikiewicz (oskar@saturdaysheroes.dev)

@@ -37,7 +37,8 @@ func main() {
 			return
 		}
 
-		recType, recName, recValue, recProxied := labels["dns.type"], labels["dns.name"], labels["dns.value"], labels["dns.proxied"]
+		recType, recName := labels["shdns.type"], labels["shdns.name"]
+		recValue, recProxied := labels["shdns.value"], labels["shdns.proxied"]
 		if recType == "" || recName == "" || recValue == "" || recProxied == "" {
 			return
 		}
