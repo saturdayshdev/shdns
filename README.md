@@ -4,7 +4,7 @@ Service for automatic creation of Cloudflare DNS records.
 
 ### Usage
 
-shDNS works based on Docker labels of containers and the container start event.
+shDNS works based on Docker labels of containers and the container start event:
 
 ```yaml
 labels:
@@ -26,7 +26,7 @@ You can see a list of all environment variables below.
 
 | Variable           | Description                    |
 | ------------------ | ------------------------------ |
-| CLOUDFLARE_API_KEY | Global API key for Cloudlfare. |
+| CLOUDFLARE_API_KEY | Global API key for Cloudflare. |
 | CLOUDFLARE_EMAIL   | Email for Cloudflare.          |
 
 ### Commits
