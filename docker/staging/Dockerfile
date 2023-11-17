@@ -7,7 +7,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o /app/bin/ ./cmd/...
+RUN go build -o app ./cmd
 
 FROM alpine:3.14.2
 
