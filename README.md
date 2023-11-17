@@ -14,7 +14,7 @@ labels:
   - shdns.proxied=false
 ```
 
-## Prerequisites
+### Setup
 
 1. Add all necesssary environment variables. Check [Environment](#environment) for more info.
 2. Consume the available aliases by running `source dev.sh`.
