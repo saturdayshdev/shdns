@@ -37,12 +37,12 @@ func main() {
 			return
 		}
 
-		recType, recName := labels["shdns.type"], labels["shdns.name"]
-		recValue, recProxied := labels["shdns.value"], labels["shdns.proxied"]
-		if recType == "" || recName == "" || recValue == "" || recProxied == "" {
+		recType, recName, recValue := labels["shdns.type"], labels["shdns.name"], labels["shdns.value"]
+		if recType == "" || recName == "" || recValue == "" {
 			return
 		}
 		
+		recProxied := labels["shdns.proxied"]
 		err = cloudflare.CreateDNSRecord(recType, recName, recValue, recProxied == "true")
 		if err != nil {
 			log.Println(err)
