@@ -14,11 +14,20 @@ labels:
   - shdns.proxied=false
 ```
 
-### Setup
+You can also run shDNS in a container:
 
-1. Add all necesssary environment variables. Check [Environment](#environment) for more info.
-2. Consume the available aliases by running `source dev.sh`.
-3. Run the app using the `start` alias.
+```yaml
+services:
+  app:
+    container_name: shdns
+    image: ghcr.io/saturdayshdev/shdns:latest
+    environment:
+      - DOCKER_API_VERSION=1.42
+      - CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY}
+      - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+```
 
 ### Environment
 
