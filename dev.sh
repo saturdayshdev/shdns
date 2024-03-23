@@ -1,5 +1,0 @@
-alias dc="docker compose"
-alias start="dc -f docker/development/docker-compose.yml up -d"
-alias stop="dc -f docker/development/docker-compose.yml down"
-alias restart="stop && start"
-alias rebuild="start --build"
