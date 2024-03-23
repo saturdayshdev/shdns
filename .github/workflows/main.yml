@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: saturdayshdev/build-action@v1.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          dockerfile: Dockerfile
+          image: ${{ github.event.repository.name }}
+          tag: latest
